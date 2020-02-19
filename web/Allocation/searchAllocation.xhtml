@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Search an allocation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>    
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">Search an allocation</h1>
+        <!-- Search new Order-->
+        <h:form>
+            <h:panelGrid columns="2" >
+                <h:outputLabel value="Allocation ID: "/>
+                <h:inputText value="#{allocationController.allocation.id}"/>
+            </h:panelGrid>
+            <h:commandButton value="Search" action="#{allocationController.doSearchPropertyAllocation()}" />
+        </h:form>
+        <!--link to navigate between pages-->
+        <a href="../Allocation/listAllocation.faces">The list of allocations</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>

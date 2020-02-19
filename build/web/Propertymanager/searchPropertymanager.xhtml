@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Search a Property Manager</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">Search a Property Manager</h1>
+        <f:view>
+            <!--Search Property Manager-->
+            <h:form>
+                <h:outputLabel value="Manager First Name :"/>
+                <h:inputText value="#{propertyManagerController.searchPropertymanager}"/>
+                <h:outputLabel value="Manager Last Name :"/>
+                <h:inputText value="#{propertyManagerController.searchPropertymanager1}"/>
+                <h:commandButton value="SEARCH" action="#{propertyManagerController.doSearchPropertyManager()}"/>
+            </h:form>
+        </f:view>
+    
+         <hr/>
+        <!-- Link to naviagte betweeen pages-->
+        <a href="../Propertymanager/listPropertymanager.faces">The List of Property Managers</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>The Current Property Managers</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Current Property Managers</h1>
+        <f:view>
+            <h:form> 
+                 <h:panelGroup rendered="#{not empty propertyManagerController.propertyManager.id}">
+                <h:outputLabel value="Successfully created property manager: #{propertyManagerController.propertyManager.firstName} #{propertyManagerController.propertyManager.lastName}"/>
+                </h:panelGroup>
+                <!-- Displaying list of Property Manager -->
+                <h:dataTable value="#{propertyManagerController.propertyManagerList}" var="item" border="1">
+                   
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="ID"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="First Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.firstName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Last Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lastName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Action"/>
+                        </f:facet>
+                        <h:commandLink value="View Details" 
+                                       action="#{propertyManagerController.doViewPropertyManagerDetails(item)}"></h:commandLink> 
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+        <!--total found Customer-->
+        Total Property Managers: <h:outputText value="#{propertyManagerController.totalPropertyManager}"/>
+        <hr/>
+        <!-- link to navigate between pages-->
+        <a href="../Propertymanager/newPropertymanager.faces">Create a Property Manager</a>|
+        <a href="../index.faces">Main Page</a>|
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>The Current Rent Properties</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Current Rent Properties </h1>
+         <f:view>
+            <h:form>
+                <!-- Showing rent property List by Data Table From Entity-->
+                <h:panelGroup rendered="#{not empty propertyManagementController.rentproperty.id}">
+                <h:outputLabel value="Successfully created the Rent Property: #{propertyManagementController.rentproperty.streetNumber} #{propertyManagementController.rentproperty.streetName}"/>
+                </h:panelGroup>
+                <h:dataTable value="#{propertyManagementController.rentpropertyList}" var="item" border="1">
+                    
+                    <h:column>
+                        <f:facet name="header" >
+                            <h:outputText value="ID"/>
+                        </f:facet>
+                        <h:outputText value="#{item.id}"/>
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header" >
+                            <h:outputText value="Type"/>
+                        </f:facet>
+                        <h:outputText value="#{item.propertyType}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Location"/>
+                        </f:facet>
+                        <h:outputText value="#{item.streetNumber} #{item.streetName} #{item.city}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value=""/>
+                        </f:facet>
+                        <h:commandLink value="#View Details" 
+                                       action="#{propertyManagementController.doViewrentPropertyManagerDetails(item)}"></h:commandLink>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+        Total rent properties: <h:outputText value="#{propertyManagementController.totalRentproperty}"/>
+        <hr/>
+        <!--link to navigate between pages-->
+        <a href="../Propertymanagement/rentProperty.faces">Create a rent property</a>|
+        <a href="../index.faces">Main Page</a>|
+
+
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Create a Sale Property</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">Create a Sale Property</h1>
+        <f:view>
+            <!-- Creating new sale property-->
+            <h:form>
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="Property Type: " for="Property Type: " /> 
+                    <h:inputText id="make" value="#{propertyManagementController.saleProperty.propertyType}" title="Property Type: " />
+                    <h:outputLabel value="No.of Bedrooms: " for="No.of Bedrooms: " />
+                    <h:inputText id="model" value="#{propertyManagementController.saleProperty.numberofBedroom}" title="No.of Bedrooms: " />
+                    <h:outputLabel value="No.of Bathrooms: " for="No.of Bathrooms: " />
+                    <h:inputText id="driveType" value="#{propertyManagementController.saleProperty.numberofBathroom}" title="No.of Bathrooms: " />
+                    <h:outputLabel value="Property Description: " for="Property Description: " />
+                    <h:inputText id="colour" value="#{propertyManagementController.saleProperty.propertyDescription}" title="Property Description: " />
+                    <h:outputLabel value="Street Number: " for="Street Number: " />
+                    <h:inputText id="transmission" value="#{propertyManagementController.saleProperty.streetNumber}" title="Street Number: " />
+                    <h:outputLabel value="Street Name: " for="Street Name: " />
+                    <h:inputText id="engine" value="#{propertyManagementController.saleProperty.streetName}" title="Street Name: " />
+                    <h:outputLabel value="City: " for="City: " />
+                    <h:inputText id="fuelType" value="#{propertyManagementController.saleProperty.city}" title="City: " />
+                    <h:outputLabel value="Post Code:" for="Post Code:" />
+                    <h:inputText id="doors" value="#{propertyManagementController.saleProperty.postCode}" title="Post Code: " />
+                    <h:outputLabel value="Country: " for="Country: " />
+                    <h:inputText id="seats" value="#{propertyManagementController.saleProperty.country}" title="Country: " />
+                    <h:outputLabel value="Sale Price:" for="Sale Price:" />
+                    <h:inputText id="price" value="#{propertyManagementController.saleProperty.salePrice}" title="Sale Price: " />
+                    <br/>
+                    <!-- button to create new saleproperty navaigate to controller-->
+                    <h:commandButton value="Create" action="#{propertyManagementController.doCreateSaleproperty()}"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+        <hr/>
+        <!-- link to navigate between pages-->
+        <a href="../Propertymanagement/listNewsaleProperty.faces">The list of sale properties</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>The Found Allocation</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Found Allocation</h1>
+        <!-- List of Search order-->
+        <h:dataTable value="#{allocationController.searchDetailedAllocationsList}" var="allocation" border="1"> 
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ID" />
+                </f:facet>
+                <h:outputText value="#{allocation[0]}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Property Manager" />
+                </f:facet>
+                <a href="#"><h:outputText value="#{allocation[2]} #{allocation[3]}"/></a>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Property" />
+                </f:facet>
+                <a href="#"><h:outputText value="#{allocation[4]} #{allocation[5]} #{allocation[6]}"/></a>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                   
+                </f:facet>
+                <h:form>
+                    <h:commandLink value="Delete" 
+                                   action="#{allocationController.doDeleteAllocation(allocation[0])}"></h:commandLink> 
+                </h:form>
+            </h:column>
+        </h:dataTable>
+        <!-- total number of allocation-->
+        <p>Total Allocations : <h:outputText value="#{allocationController.allocationDetailsList.size()}"/></p>
+        <hr/>
+        <!-- link to navigate betweeen pages-->
+        <a href="../Allocation/listAllocation.faces">The List of allocations</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>

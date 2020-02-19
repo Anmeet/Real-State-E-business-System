@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Create A Rent Property</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">Create a Rent Property </h1>
+        <f:view>
+            <h:form>
+                <!-- create rent property-->
+                <h:panelGrid columns="2">
+                    
+                    <h:outputLabel value="Property Type:" for="Property Type:" />
+                    <h:inputText id="propertytype" value="#{propertyManagementController.rentproperty.propertyType}" title="Odometer" />
+                    <h:outputLabel value="No.of Bedrooms: " for="No.of Bedrooms: " />
+                    <h:inputText id="model" value="#{propertyManagementController.rentproperty.numberofBedroom}" title="No.of Bedrooms: " />
+                    <h:outputLabel value="No.of Bathrooms: " for="No.of Bathrooms: " />
+                    <h:inputText id="driveType" value="#{propertyManagementController.rentproperty.numberofBathroom}" title="No.of Bathrooms: " />
+                    <h:outputLabel value="Property Description: " for="Property Description: " />
+                    <h:inputText id="colour" value="#{propertyManagementController.rentproperty.propertyDescription}" title="Property Description: " />
+                    <h:outputLabel value="Street Number: " for="Street Number: " />
+                    <h:inputText id="transmission" value="#{propertyManagementController.rentproperty.streetNumber}" title="Street Number: " />
+                    <h:outputLabel value="Street Name: " for="Street Name: " />
+                    <h:inputText id="engine" value="#{propertyManagementController.rentproperty.streetName}" title="Street Name: " />
+                    <h:outputLabel value="City: " for="City: " />
+                    <h:inputText id="fuelType" value="#{propertyManagementController.rentproperty.city}" title="City: " />
+                    <h:outputLabel value="Post Code:" for="Post Code:" />
+                    <h:inputText id="doors" value="#{propertyManagementController.rentproperty.postCode}" title="Post Code: " />
+                    <h:outputLabel value="Country: " for="Country: " />
+                    <h:inputText id="seats" value="#{propertyManagementController.rentproperty.country}" title="Country: " />
+                     <h:outputLabel value="Weekly Rent: " for="Weekly Rent: " />
+                    <h:inputText id="weeklyrent" value="#{propertyManagementController.rentproperty.weeklyRent}" title="Weekly Rent: " />
+                    <h:outputLabel value="Furnished:" for="Furnished" />
+                    <h:inputText id="furnished" value="#{propertyManagementController.rentproperty.furnished}" title="Weekly Rent: " />
+                    
+                    <!-- create rent property-->
+                    <h:commandButton value="Create" action="#{propertyManagementController.doCreateRentproperty()}"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+        <!-- link to navigae different pages-->
+        <a href="../Propertymanagement/listrentProperty.faces">The List of rent properties</a>|
+        <a href="../index.faces">Main Page</a>|
+    </body>
+</html>

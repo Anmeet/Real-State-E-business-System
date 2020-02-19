@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>      
+        <title>The Rent Property of ID: <h:outputText value="#{propertyManagementController.rentproperty.id}" /></title>
+    </head>
+    <h:body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Rent Property of ID: <h:outputText value="#{propertyManagementController.rentproperty.id}" /></h1>
+        <div style="margin-left:15px">
+            <!-- showing sale property details details-->
+            <table>
+        <h:panelGrid columns="2"> 
+                <tr>
+                    <td>Property Type:</td>
+                    <td>#{propertyManagementController.rentproperty.propertyType} </td>
+                </tr>
+                <tr>
+                    <td>Number of Bedrooms: </td>
+                    <td>#{propertyManagementController.rentproperty.numberofBedroom}</td>
+                </tr>
+                
+                <tr>
+                    <td>Number of Bathrooms: </td>
+                    <td>#{propertyManagementController.rentproperty.numberofBathroom}</td>
+                </tr>
+                 <tr>
+                    <td>Address: </td>
+                    <td>#{propertyManagementController.rentproperty.streetNumber} #{propertyManagementController.rentproperty.streetName}  #{propertyManagementController.rentproperty.city} #{propertyManagementController.rentproperty.country}</td>
+                </tr>
+            <tr>
+                    <td>Weekly Rent: </td>
+                    <td>#{propertyManagementController.rentproperty.weeklyRent}</td>
+                </tr>
+            
+             <tr>
+                    <td>Furnished: </td>
+                    <td>#{propertyManagementController.rentproperty.furnished}</td>
+                </tr>
+                <tr>
+                    <td>Property Description: </td>
+                    <td>#{propertyManagementController.rentproperty.propertyDescription}</td>
+                </tr>
+                </h:panelGrid>
+                
+            </table>
+            <hr/>
+            <a href="../Propertymanagement/rentProperty.faces">Create a rent Property</a> | 
+            <a href="../index.faces">Main Page</a>
+        </div>
+    </h:body>
+</html>

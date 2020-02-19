@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>The Found Property Manager</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Found Property Manager</h1>
+        <f:view>
+            <h:form>  
+                <!-- list of search property manager-->
+                <h:dataTable value="#{propertyManagerController.searchPropertymanagerList}" var="item" border="1">                    
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="First Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.firstName}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Last Name"/>
+                        </f:facet>
+                        <h:outputText value="#{item.lastName}"/>
+                    </h:column>
+                                  
+                   <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Action"/>
+                        </f:facet>
+                        <a href="#">view details </a>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+        <!-- total found customer-->
+       Total Property Managers: <h:outputText value="#{propertyManagerController.getTotalSearchPropertyManager()}"/>
+        <hr/>
+        <!-- link to navigae between pages-->
+        <a href="../Propertymanager/newPropertymanager.faces">Create a Property Manager</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>

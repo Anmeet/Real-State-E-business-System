@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>      
+        <title>The Property Manager of ID:  <h:outputText value="#{propertyManagerController.propertyManager.id}" /></title>
+    </head>
+    <h:body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Property Manager of ID:  <h:outputText value="#{propertyManagerController.propertyManager.id}" /></h1>
+        <div style="margin-left:15px">
+            <!-- showing property manager details-->
+            <table>
+           <h:panelGrid columns="2"> 
+                <tr>
+                    <td>Manager Name :</td>
+                    <td>#{propertyManagerController.propertyManager.firstName} #{propertyManagerController.propertyManager.lastName}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number :</td>
+                    <td>#{propertyManagerController.propertyManager.phoneNumber}</td>
+                </tr>
+                
+                <tr>
+                    <td>Mobile :</td>
+                    <td>#{propertyManagerController.propertyManager.mobile}</td>
+                </tr>
+                
+                <tr>
+                    <td>Email Address:</td>
+                    <td>#{propertyManagerController.propertyManager.email}</td>
+                </tr>
+                </h:panelGrid>
+            </table>
+            <hr/>
+            <!-- showingg property allocations  details-->
+            
+            <br />
+            <h1>Property Allocations( <h:outputText value="#{propertyManagerController.doOrdersCount(propertyManagerController.propertyManager.id)}" /> )</h1>
+            <h:dataTable value="#{allocationController.getPropertyManagerAllocationsFromId(propertyManagerController.propertyManager.id)}" var="allocation" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#" />
+                    </f:facet>
+                    <h:outputText value="#{allocation[0]}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Time Created" />
+                    </f:facet>
+                    <h:outputText value="#{allocation[6]}"/>
+                </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Location" />
+                    </f:facet>
+                    <a href="#"> <h:outputText value="#{allocation[3]} #{allocation[4]} #{allocation[5]}"/></a>
+                </h:column>
+                 
+            </h:dataTable> 
+            <!-- link to navigate between different pages
+            <br />-->
+            
+            
+            
+            
+            <a href="../Allocation/newAllocation.faces">Create a new allocation</a> | 
+            <a href="../index.faces">Main Page</a>
+        </div>
+    </h:body>
+</html>

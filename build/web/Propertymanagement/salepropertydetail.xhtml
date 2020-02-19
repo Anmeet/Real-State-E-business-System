@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>      
+        <title>The Sale Property of ID: <h:outputText value="#{propertyManagementController.saleProperty.id}" /></title>
+    </head>
+    <h:body style="background-color:silver">
+        <h1 style="background-color:blueviolet">The Sale Property of ID: <h:outputText value="#{propertyManagementController.saleProperty.id}" /></h1>
+        <div style="margin-left:15px">
+            <!-- showing sale property details details-->
+            <table>
+        <h:panelGrid columns="2"> 
+                <tr>
+                    <td>Property Type:</td>
+                    <td>#{propertyManagementController.saleProperty.propertyType} </td>
+                </tr>
+                <tr>
+                    <td>Number of Bedrooms: </td>
+                    <td>#{propertyManagementController.saleProperty.numberofBedroom}</td>
+                </tr>
+                
+                <tr>
+                    <td>Number of Bathrooms: </td>
+                    <td>#{propertyManagementController.saleProperty.numberofBathroom}</td>
+                </tr>
+                 <tr>
+                    <td>Address: </td>
+                    <td>#{propertyManagementController.saleProperty.streetNumber} #{propertyManagementController.saleProperty.streetName} #{propertyManagementController.saleProperty.city} #{propertyManagementController.saleProperty.country}</td>
+                </tr>
+            <tr>
+                    <td>Sale Price: </td>
+                    <td>#{propertyManagementController.saleProperty.salePrice}</td>
+                </tr>
+                <tr>
+                    <td>Property Description: </td>
+                    <td>#{propertyManagementController.saleProperty.propertyDescription}</td>
+                </tr>
+                </h:panelGrid>
+                
+            </table>
+            <hr/>
+            <a href="../Propertymanagement/saleProperty.faces">Create a new sale Property</a> | 
+            <a href="../index.faces">Main Page</a>
+        </div>
+    </h:body>
+</html>

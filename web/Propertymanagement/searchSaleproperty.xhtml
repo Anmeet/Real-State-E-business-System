@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Search a Sale Property</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body style="background-color:silver">
+        <h1 style="background-color:blueviolet">Search a Sale Property </h1>
+        <f:view>
+            <h:form>
+                <h:outputLabel value="Property ID:"/>
+                <h:inputText value="#{propertyManagementController.sreferenceNumber}"/>
+                <!-- search new sale property-->
+                <h:commandButton value="Search" action="#{propertyManagementController.doSearchSaleproperty()}"/>
+            </h:form>
+        </f:view>
+        <hr/>
+        <!-- link to navigate between pages-->
+        <a href="../Propertymanagement/listNewsaleProperty.faces">The list of sale properties</a>|
+        <a href="../index.faces">Main Page</a>
+    </body>
+</html>
